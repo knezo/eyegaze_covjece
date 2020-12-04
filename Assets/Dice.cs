@@ -7,22 +7,26 @@ public class Dice : MonoBehaviour
 
     public Sprite[] diceSides;
     public SpriteRenderer rend;
+    public int whosTurn = 1;
+    private bool coroutineAllowed = true;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
         diceSides = Resources.LoadAll<Sprite>("Dice");
         rend.sprite = diceSides[5];
     }
 
-    void OnMouseDown()
+    private void OnMouseDown()
     {
-        StartCoroutine("RollTheDice");
+        if (!GameControl.gameOver && coroutineAllowed)
+            StartCoroutine("RollTheDice");
     }
 
-    IEnumerator RollTheDice()
+    private IEnumerator RollTheDice()
     {
+        coroutineAllowed = false;
         int randomDiceSide = 0;
         for (int i = 0; i < 12; i++)
         {
@@ -31,11 +35,25 @@ public class Dice : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-    }
+        GameControl.diceSideThrown = randomDiceSide + 1;
 
-    // Update is called once per frame
-    void Update()
-    {
+        if (whosTurn == 1){
+            GameControl.MovePlayer(1);
+
+            if (randomDiceSide != 5){
+                whosTurn *= -1;
+            }
+
+        } else if (whosTurn == -1){
+            GameControl.MovePlayer(2);
+            if (randomDiceSide != 5){
+                whosTurn *= -1;
+            }
+        }
+
+        Debug.Log(whosTurn);
         
+        coroutineAllowed = true;
+
     }
 }
