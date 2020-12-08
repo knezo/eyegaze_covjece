@@ -240,7 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9df6fa02a7a6b42b9aa98305e1dc47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumeberOfPlayers: 0
 --- !u!4 &135450797
 Transform:
   m_ObjectHideFlags: 0
@@ -483,7 +482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &293474821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -560,7 +559,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b4f5ed6a7da2945a4ca4a48478c2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 443211515}
+  - {fileID: 987971447}
+  - {fileID: 1769591060}
+  - {fileID: 1389274770}
+  - {fileID: 432996574}
+  - {fileID: 639482544}
+  - {fileID: 698033246}
+  - {fileID: 670497208}
+  - {fileID: 594066086}
+  - {fileID: 410741307}
+  - {fileID: 734885532}
+  - {fileID: 940617568}
+  - {fileID: 2079884029}
+  - {fileID: 1780058017}
+  - {fileID: 1315377579}
+  - {fileID: 1670327774}
+  - {fileID: 782851704}
+  - {fileID: 1926796694}
+  - {fileID: 845675982}
+  - {fileID: 648338898}
+  - {fileID: 594706498}
+  - {fileID: 568347637}
+  - {fileID: 758152775}
+  - {fileID: 672447245}
+  - {fileID: 1449783917}
+  - {fileID: 664946706}
+  - {fileID: 231295698}
+  - {fileID: 31853001}
+  - {fileID: 458659416}
+  - {fileID: 1611655873}
+  - {fileID: 2082306363}
+  - {fileID: 1934343282}
+  - {fileID: 1124059005}
+  - {fileID: 205593299}
+  - {fileID: 15552884}
+  - {fileID: 289897941}
+  - {fileID: 2037269425}
+  - {fileID: 350205262}
+  - {fileID: 1054420554}
+  - {fileID: 364325998}
+  - {fileID: 1196538362}
+  - {fileID: 75895869}
+  - {fileID: 1483071777}
+  - {fileID: 1324916018}
+  - {fileID: 1069858485}
+  - {fileID: 1683772480}
+  - {fileID: 687582793}
+  - {fileID: 1437140769}
+  - {fileID: 428614171}
+  - {fileID: 1101330165}
+  - {fileID: 1031882232}
+  - {fileID: 780714138}
   waypointIndex: 0
   moveAllowed: 0
 --- !u!1 &310272337
@@ -770,7 +821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &351012738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -847,7 +898,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b4f5ed6a7da2945a4ca4a48478c2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 443211515}
+  - {fileID: 987971447}
+  - {fileID: 1769591060}
+  - {fileID: 1389274770}
+  - {fileID: 432996574}
+  - {fileID: 639482544}
+  - {fileID: 698033246}
+  - {fileID: 670497208}
+  - {fileID: 594066086}
+  - {fileID: 410741307}
+  - {fileID: 734885532}
+  - {fileID: 940617568}
+  - {fileID: 2079884029}
+  - {fileID: 1780058017}
+  - {fileID: 1315377579}
+  - {fileID: 1670327774}
+  - {fileID: 782851704}
+  - {fileID: 1926796694}
+  - {fileID: 845675982}
+  - {fileID: 648338898}
+  - {fileID: 594706498}
+  - {fileID: 568347637}
+  - {fileID: 758152775}
+  - {fileID: 672447245}
+  - {fileID: 1449783917}
+  - {fileID: 664946706}
+  - {fileID: 231295698}
+  - {fileID: 31853001}
+  - {fileID: 458659416}
+  - {fileID: 1611655873}
+  - {fileID: 2082306363}
+  - {fileID: 1934343282}
+  - {fileID: 1124059005}
+  - {fileID: 205593299}
+  - {fileID: 15552884}
+  - {fileID: 289897941}
+  - {fileID: 2037269425}
+  - {fileID: 350205262}
+  - {fileID: 1054420554}
+  - {fileID: 364325998}
+  - {fileID: 1196538362}
+  - {fileID: 75895869}
+  - {fileID: 1483071777}
+  - {fileID: 1324916018}
+  - {fileID: 1069858485}
+  - {fileID: 1683772480}
+  - {fileID: 687582793}
+  - {fileID: 1437140769}
+  - {fileID: 428614171}
+  - {fileID: 1101330165}
+  - {fileID: 1031882232}
+  - {fileID: 780714138}
   waypointIndex: 0
   moveAllowed: 0
 --- !u!1 &364325997
@@ -2048,6 +2151,7 @@ MonoBehaviour:
   diceSides: []
   rend: {fileID: 0}
   whosTurn: 1
+  numberOfPlayers: 0
 --- !u!61 &910947794
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2444,7 +2548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1147063037
 MonoBehaviour:
   m_ObjectHideFlags: 0
