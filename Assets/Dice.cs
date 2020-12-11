@@ -17,7 +17,7 @@ public class Dice : MonoBehaviour
         numberOfPlayers = GameSetup.numberOfPlayers;
         
         whosTurn = 0;
-        Debug.Log("dice start:" + whosTurn);
+        // Debug.Log("dice start:" + whosTurn);
         rend = GetComponent<SpriteRenderer>();
         diceSides = Resources.LoadAll<Sprite>("Dice");
         rend.sprite = diceSides[5];
@@ -26,14 +26,14 @@ public class Dice : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("dice onmouse:" + whosTurn);
+        // Debug.Log("dice onmouse:" + whosTurn);
         if (!GameControl.gameOver && coroutineAllowed)
             StartCoroutine("RollTheDice");
     }
 
     private IEnumerator RollTheDice()
     {
-        Debug.Log("dice roll:" + whosTurn);
+        // Debug.Log("dice roll:" + whosTurn);
         coroutineAllowed = false;
         int randomDiceSide = 0;
         for (int i = 0; i < 12; i++)
@@ -47,11 +47,11 @@ public class Dice : MonoBehaviour
 
         if (whosTurn == 0){
             GameControl.MovePlayer(1);
-            Debug.Log("bok");
+            // Debug.Log("bok");
 
             if (randomDiceSide != 5){
                 whosTurn = (whosTurn+1)%numberOfPlayers;
-                Debug.Log(whosTurn);
+                // Debug.Log(whosTurn);
             }
 
         } else if (whosTurn == 1){

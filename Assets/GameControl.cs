@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameControl : MonoBehaviour
     public static bool gameOver = false;
 
     public static int numOfPlayers = 0;
+    public Text whosMoveText;
 
 
     // Start is called before the first frame update
@@ -26,6 +28,9 @@ public class GameControl : MonoBehaviour
         whoWinsTextShadow = GameObject.Find("WhoWinsText");
         player1MoveText = GameObject.Find("Player1MoveText");
         player2MoveText = GameObject.Find("Player2MoveText");
+
+        whosMoveText = GameObject.Find("Canvas/WhosMoveText").GetComponent<Text>();
+        // whosMoveText.gameObject.SetActive(false);
 
         // GameObject gs = GameObject.Find("GameSetup");
         // controllerScript cs = gs.GetComponent
@@ -79,10 +84,10 @@ public class GameControl : MonoBehaviour
         {
             player1.GetComponent<FollowThePath>().moveAllowed = false;
 
-            if (dice.GetComponent<Dice>().whosTurn == -1){ //change text whos turn is next
-                player1MoveText.gameObject.SetActive(false);
-                player2MoveText.gameObject.SetActive(true);
-            }
+            // if (dice.GetComponent<Dice>().whosTurn == 2){ //change text whos turn is next
+            //     player1MoveText.gameObject.SetActive(false);
+            //     player2MoveText.gameObject.SetActive(true);
+            // }
             
             player1StartWaypoint = player1.GetComponent<FollowThePath>().waypointIndex - 1;
         }
@@ -92,10 +97,10 @@ public class GameControl : MonoBehaviour
         {
             player2.GetComponent<FollowThePath>().moveAllowed = false;
 
-            if (dice.GetComponent<Dice>().whosTurn == 1){
-                player1MoveText.gameObject.SetActive(true);
-                player2MoveText.gameObject.SetActive(false);
-            }
+            // if (dice.GetComponent<Dice>().whosTurn == 1){
+            //     player1MoveText.gameObject.SetActive(true);
+            //     player2MoveText.gameObject.SetActive(false);
+            // }
             player2StartWaypoint = player2.GetComponent<FollowThePath>().waypointIndex - 1;
         }
 
@@ -147,6 +152,22 @@ public class GameControl : MonoBehaviour
             player2MoveText.gameObject.SetActive(false);
             // whoWinsTextShadow.GetComponent<Text>().text = "Player 2 Wins";
             gameOver = true;
+        }
+
+
+        //whos turn text
+        if (dice.GetComponent<Dice>().whosTurn == 0){ //change text whos turn is next
+            // player1MoveText.gameObject.SetActive(true);
+            // player2MoveText.gameObject.SetActive(false);
+            whosMoveText.text = "Igra igrač 1";
+        } else if (dice.GetComponent<Dice>().whosTurn == 1){
+            // player1MoveText.gameObject.SetActive(false);
+            // player2MoveText.gameObject.SetActive(true);
+            whosMoveText.text = "Igra igrač 2";
+        } else if (dice.GetComponent<Dice>().whosTurn == 2){
+            whosMoveText.text = "Igra igrač 3";
+        } else if (dice.GetComponent<Dice>().whosTurn == 3){
+            whosMoveText.text = "Igra igrač 4";
         }
     }
 

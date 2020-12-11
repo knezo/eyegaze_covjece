@@ -9,13 +9,24 @@ public class GameSetup : MonoBehaviour
     
     public static int numberOfPlayers = 0;
 
-    // private GameObject CanvasSetup;
+    public GameObject ExitCanvas, RestartCanvas;
 
-    
+
     // Start is called before the first frame update
     void Start(){
-        // CanvasSetup = GameObject.Find("CanvasSetup");
 
+        try
+        {
+            ExitCanvas = GameObject.Find("ExitCanvas");
+            RestartCanvas = GameObject.Find("RestartCanvas");
+
+            ExitCanvas.gameObject.SetActive(false);
+            RestartCanvas.gameObject.SetActive(false);
+        }
+        catch (System.Exception)
+        {
+
+        }
     }
 
     // // Update is called once per frame
@@ -23,6 +34,34 @@ public class GameSetup : MonoBehaviour
     // {
         
     // }
+
+    // game restart
+    public void RestartPressed(){
+        RestartCanvas.gameObject.SetActive(true);
+    }
+
+    public void RestartNoPressed(){
+        RestartCanvas.gameObject.SetActive(false);
+    }
+
+    public void Restart(){
+            SceneManager.LoadScene(0);
+        }
+
+    // game exit
+    public void ExitPressed(){
+        ExitCanvas.gameObject.SetActive(true);
+    }
+
+    public void ExitNoPressed(){
+        ExitCanvas.gameObject.SetActive(false);
+    }
+
+    public void Exit(){
+        Application.Quit();
+    }
+
+    
 
     public void Button1Pressed(){
         Debug.Log("Kliknuo si 1");
